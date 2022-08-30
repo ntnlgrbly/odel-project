@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="email.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <from onsubmit="sendEmail()">
+            <h3> GET IN TOUCH</h3>
+            <input type="text" id="name" placeholder="your name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="phone" placeholder="phone Number" required>
+            <textarea id="message" rows="4" placeholder="type massege"></textarea>
+            <button onclick="(()=>{
+alert('aaa') })">
+                SEnd</button>
+        </from>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.yourisp.com",
+                Username: "username",
+                Password: "password",
+                To: 'them@website.com',
+                From: "you@isp.com",
+                Subject: "This is the subject",
+                Body: "And this is the body"
+            }).then(
+                message => alert(message)
+            );
+        } 
+    </script>
+</body>
+
+</html>

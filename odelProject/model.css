@@ -1,0 +1,12 @@
+.modal{
+    background: darkblue;
+}
+.modal-footer{
+    height: 30px;
+}
+.modal-body{
+    background: salmon;
+}
+#try{
+    background: salmon;
+}
